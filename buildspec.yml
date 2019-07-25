@@ -5,17 +5,5 @@ phases:
       docker: 18
   pre_build:
     commands:
+      - mkdir sample
       - aws s3 cp s3://mydocss/TEst/target/test1.jar /opt/sample
-      - echo Logging in to Amazon ECR...
-      - $(aws ecr get-login --no-include-email --region=ap-south-1)
-  build:
-    commands:
-      - echo Build started on `date`
-      - echo Building the Docker image...          
-      - docker build -t docker-example:latest .
-      - docker tag docker-example:latest 969968687208.dkr.ecr.ap-south-1.amazonaws.com/docker-example:latest
-  post_build:
-    commands:
-      - echo Build completed on `date`
-      - echo Pushing the Docker image...
-      - docker push 969968687208.dkr.ecr.ap-south-1.amazonaws.com/docker-example:latest
