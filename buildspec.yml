@@ -1,4 +1,7 @@
 version: 0.2
+env
+  variables:
+    
 phases:
   install:
     runtime-versions:
@@ -6,6 +9,7 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
+      - mvn clean package
       - $(aws ecr get-login --no-include-email --region=ap-south-1)
   build:
     commands:
