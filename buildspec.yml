@@ -5,5 +5,5 @@ phases:
       docker: 18
   pre_build:
     commands:
-      - mkdir sample
+      - mkdir /opt/sample
       - aws s3 cp s3://mydocss/TEst/target/test1.jar /opt/sample
