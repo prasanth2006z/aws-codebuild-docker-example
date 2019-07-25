@@ -9,7 +9,8 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - mvn clean package
+      - mvn clean
+      - mvn package
       - $(aws ecr get-login --no-include-email --region=ap-south-1)
   build:
     commands:
