@@ -2,7 +2,6 @@ version: 0.2
 env:
   variables:
     AWS_DEFAULT_REGION: "ap-south-1"
-    AWS_ACCOUNT_ID: ""
     IMAGE_REPO_NAME: "docker-example"
     IMAGE_TAG: "latest"
 phases:
